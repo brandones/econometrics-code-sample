@@ -1,6 +1,6 @@
 library("tidyverse")
 
-data <- read_csv("data_raw/wits-trade-summary.csv")
+data <- read_csv("data_0_raw/wits-trade-summary.csv")
 
 # About the data: ####################################################################################################
 #
@@ -64,7 +64,7 @@ country_data <- country_data %>%
     abs(lag(`Trade Balance (current US$ Mil)`)) * 100)
 
 #### Merge in the WITS imports data
-imports <- read_csv("data_raw/wits-imports.csv")
+imports <- read_csv("data_0_raw/wits-imports.csv")
 
 # Make new indicators to pivot wider. Go from thousands to millions.
 imports <- imports %>%
@@ -115,4 +115,4 @@ names(imports) <- stringr::str_replace_all(names(imports), "_Import\\(US\\$ Mil\
 combined_data <- country_data %>%
   left_join(imports, by = c("Country_Name", "Year"))
 
-write_csv(combined_data, "./data_clean/wits-country-data.csv")
+write_csv(combined_data, "./data_1_clean/wits-country-data.csv")

@@ -1,10 +1,12 @@
 library("tidyverse")
 
-wits <- read_csv("./wits-clean-country-data.csv")
-complexity <- read_csv("./harvard-complexity.csv")
-country_codes <- read_csv("./country-codes.csv")
+wits <- read_csv("./data_1_clean/wits-country-data.csv")
+complexity <- read_csv("./data_1_clean/harvard-complexity.csv")
+country_codes <- read_csv("./data_0_raw/country-codes.csv")
 
 # Normalize country names to those in country-codes (and WB WDI)
+# Note to reviewers: These mappings are constructed using a combination of AI tools,
+# heuristic fuzzy matching, and (brief) manual review.
 wits$Country_Name[wits$Country_Name == "Brunei"] <- "Brunei Darussalam"
 wits$Country_Name[wits$Country_Name == "Cape Verde"] <- "Cabo Verde"
 wits$Country_Name[wits$Country_Name == "Ethiopia(excludes Eritrea)"] <- "Ethiopia"
@@ -37,4 +39,4 @@ data <- data %>%
   fill(Country_Code, .direction = "downup") %>%
   ungroup()
 
-write_csv(data, "wits-with-complexity.csv")
+write_csv(data, "data_2_merged/wits-with-complexity.csv")

@@ -1,18 +1,48 @@
-# Levy Summer Research
+# Code Sample
 
-The code is all in R. You must have `tidyverse` installed. All other libraries that
-are needed will be installed at script runtime (if not installed already).
+This code is from a summer research project done at the Levy Institute. It was all written
+by Brandon Istenes.
 
-This folder, "Levy Summer Datasets",
-is what I will call the "project directory" here. All the code in this project should be run
-with this folder as the working directory. You can use `setwd` to set the working directory.
-Here I am using `getwd` to show the path of my current working directory.
+It is organized as a data pipeline. Scripts for the pipeline are in folders numbered
+by stage. Data is organized similarly, starting with inputs at `data_0_raw` and ending
+with `data_output`.
+
+Set up and run the project with
+
+```sh
+./setup.sh
+./run.sh
+```
+
+This will install the Tidyverse R package if it is not already installed on your computer, and
+will set up a Python virtual environment.
+
+## Notes on Script Files
+
+Though the scripts in `0_downloading` are used to obtain the raw
+data in the first place, I have checked in the raw data to this repository for simplicity.
+The python file `0_downloading/download-wits-imports.py` should work for anyone with Python 3
+installed. However a few other data files are generally stored on my Google Drive. These are
+managed with the file `0_downloading/data.sh`. This will not work on your local machine,
+as it requires access to the Google Drive API, and to my Drive in particular. It is included to
+demonstrate one of the methods I use to manage data for analysis. Of course, Git LFS would be
+preferable, but this method is considerably cheaper. Using APIs to download data directly, as
+demonstrated in `download-wits-imports.py`, is also preferable, but not always possible.
+
+All the R code in this project should be run with this folder as the working directory. In R, you can
+use `setwd` to set the working directory. You can check the current working directory using `getwd`:
 
 ```r
 r$> getwd()
-[1] "/home/brandon/GDrive/Levy/Levy Summer Datasets"
+[1] "/home/brandon/Code/economics/code-sample"
 ```
 
-Raw data is in `data_raw`. Do not modify data in there. The scripts in `cleaning`
-read in data from `data_raw` and create new, cleaned up tables in the project directory.
-Analysis scripts create files in the `output` directory.
+## Nota Bene
+
+I have professional experience building automated pipelines running at scale to populate databases;
+building data analysis pipelines for econometric projects is new to me. I look forward to learning
+other norms, tools, and practices from your team. I also have experience working with Jupyter
+notebooks, R Shiny, and various JavaScript data visualization libraries.
+
+The meaning and usefulness of the output will of course be a bit opaque to the reader. This code
+sample is intended to showcase organization and code style rather than presentation.

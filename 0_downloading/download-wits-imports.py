@@ -21,4 +21,4 @@ imports_df = imports_df.rename(columns={'level_0': 'Country', 'level_1': 'Year'}
 imports_df = imports_df.set_index(['Country', 'Year'])
 
 # Save to CSV
-imports_df.to_csv('data_raw/wits-imports.csv')
+imports_df.to_csv('data_0_raw/wits-imports.csv')
