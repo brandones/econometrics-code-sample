@@ -14,9 +14,10 @@ Mac and Linux users may set up and run the project with
 ./run.sh
 ```
 
-This will install the Tidyverse R package if it is not already installed on your computer, and
-will set up a Python virtual environment. Maybe it will work in the Windows Linux subsystem but
-no guarantees.
+The setup file will install the Tidyverse R package if it is not already installed on your computer, and
+will set up a Python virtual environment. The run file will execute all the scripts in order.
+
+These scripts might work in the Windows Linux subsystem, but no guarantees.
 
 ## Notes on Script Files
 
