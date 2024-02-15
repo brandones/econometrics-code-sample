@@ -7,7 +7,7 @@ It is organized as a data pipeline. Scripts for the pipeline are in folders numb
 by stage. Data is organized similarly, starting with inputs at `data_0_raw` and ending
 with `data_output`.
 
-Set up and run the project with
+Mac and Linux users may set up and run the project with
 
 ```sh
 ./setup.sh
@@ -15,7 +15,8 @@ Set up and run the project with
 ```
 
 This will install the Tidyverse R package if it is not already installed on your computer, and
-will set up a Python virtual environment.
+will set up a Python virtual environment. Maybe it will work in the Windows Linux subsystem but
+no guarantees.
 
 ## Notes on Script Files
 
@@ -30,7 +31,8 @@ preferable, but this method is considerably cheaper. Using APIs to download data
 demonstrated in `download-wits-imports.py`, is also preferable, but not always possible.
 
 All the R code in this project should be run with this folder as the working directory. In R, you can
-use `setwd` to set the working directory. You can check the current working directory using `getwd`:
+use `setwd` to set the working directory, or start the R session from this folder. You can check the
+current working directory using `getwd`:
 
 ```r
 r$> getwd()
@@ -40,7 +42,7 @@ r$> getwd()
 ## Nota Bene
 
 I have professional experience building automated pipelines running at scale to populate databases;
-building data analysis pipelines for econometric projects is new to me. I look forward to learning
+building data analysis pipelines for econometric projects like this is new to me. I look forward to learning
 other norms, tools, and practices from your team. I also have experience working with Jupyter
 notebooks, R Shiny, and various JavaScript data visualization libraries.
 
