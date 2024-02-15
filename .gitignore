@@ -1,5 +1,4 @@
-*.csv
-*.cloud
-*.parquet
-*.dta
+data_1_clean/*
+data_2_merged/*
+data_output/*
 env/
