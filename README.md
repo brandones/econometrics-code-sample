@@ -1,7 +1,9 @@
 # Code Sample
 
 This code is from a summer research project done at the Levy Institute. It was all written
-by Brandon Istenes.
+by Brandon Istenes. It has been simplified substantially; the original version has about ten
+times as many scripts and data files. However it is organized according to similar principles,
+using the same set of stages.
 
 It is organized as a data pipeline. Scripts for the pipeline are in folders numbered
 by stage. Data is organized similarly, starting with inputs at `data_0_raw` and ending
