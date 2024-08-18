@@ -44,8 +44,8 @@ r$> getwd()
 
 ## Nota Bene
 
-I have professional experience building automated pipelines running at scale to populate databases;
-building data analysis pipelines for econometric projects like this is new to me. I look forward to learning
+I have professional experience building complex, automated pipelines running at scale to populate databases;
+I have less experience building data analysis pipelines for econometric projects like this one. I look forward to learning
 other norms, tools, and practices from your team. I also have experience working with Jupyter
 notebooks, R Shiny, and various JavaScript data visualization libraries.
 
